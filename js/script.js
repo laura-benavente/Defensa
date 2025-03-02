@@ -96,9 +96,10 @@ document.addEventListener('DOMContentLoaded', () => {
     const cartButton = document.getElementById('cart-button');  // Botón de carrito
     const cartModal = document.getElementById('cart-modal');  // Modal del carrito
     const cartItemsList = document.getElementById('cart-items');
+    const cartBookingItems = document.getElementById('cart-booking-items');
     const cartTotalElement = document.getElementById('cart-total');
     const cartCountElement = document.getElementById('cart-count');
-    const confirmCartButton = document.getElementById('confirm-cart');
+    const cartDataInput = document.getElementById('cart-data');
     const closeCartButton = document.getElementById('close-cart-modal');  // Botón para cerrar el modal del carrito
     const confirmationMessage = document.getElementById('confirmation-message');  // Mensaje de confirmación
     const addToCartButtons = document.querySelectorAll('.add-to-cart');
@@ -129,6 +130,41 @@ document.addEventListener('DOMContentLoaded', () => {
         localStorage.setItem('cart', JSON.stringify(cart));
     }
 
+    function updateCartBookingUI() {
+        if(cartBookingItems) {
+             cartBookingItems.innerHTML = '';
+      
+        // Contar cantidad de cada producto
+        const productCount = {};
+        cart.forEach(item => {
+            productCount[item.name] = (productCount[item.name] || 0) + 1;
+        });
+
+        let cartText = "";
+
+        Object.entries(productCount).forEach(([name, quantity]) => {
+            const li = document.createElement('li');
+            li.textContent = `${name} (x${quantity})`;
+
+            const removeButton = document.createElement('button');
+            removeButton.textContent = '❌';
+            removeButton.onclick = () => {
+                const itemIndex = cart.findIndex(product => product.name === name);
+                removeFromCart(itemIndex);
+            };
+
+            li.appendChild(removeButton);
+            cartBookingItems.appendChild(li);
+
+            cartText += `${name} (x${quantity})\n`;
+        });
+
+        cartDataInput.value = cartText.trim(); // Gua
+        }
+       
+    }
+    
+
     // Agregar producto al carrito
     function addToCart(event) {
         const button = event.target;
@@ -137,12 +173,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
         cart.push({ name, price });
         updateCartUI();
+        updateCartBookingUI();
     }
 
     // Eliminar producto del carrito
     function removeFromCart(index) {
         cart.splice(index, 1);
         updateCartUI();
+         updateCartBookingUI();
     }
 
     // Abrir modal del carrito al hacer clic en el botón del carrito
@@ -167,33 +205,34 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // Confirmar carrito y proceder con la reserva
-    confirmCartButton.addEventListener('click', () => {
-        if (cart.length === 0) {
-            // Si el carrito está vacío, continuar con la reserva sin productos
-            confirmationMessage.style.display = 'block';
-            confirmationMessage.innerHTML = `
-                <h3>¡Su reserva ha sido realizada con éxito!</h3>
-                <p>Gracias por su reserva. No hay productos en su carrito, pero su reserva ha sido registrada correctamente.</p>
-            `;
-        } else {
-            // Si hay productos, confirmar carrito
-            cartModal.style.display = 'none'; // Cerrar el modal
-            confirmationMessage.style.display = 'block';
-            confirmationMessage.innerHTML = `
-                <h3>¡Su reserva ha sido realizada con éxito!</h3>
-                <p>Gracias por su compra. ¡Nos vemos pronto!</p>
-                <p>Productos reservados: ${cart.map(item => item.name).join(', ')}</p>
-            `;
-        }
+    // confirmCartButton.addEventListener('click', () => {
+    //     if (cart.length === 0) {
+    //         // Si el carrito está vacío, continuar con la reserva sin productos
+    //         confirmationMessage.style.display = 'block';
+    //         confirmationMessage.innerHTML = `
+    //             <h3>¡Su reserva ha sido realizada con éxito!</h3>
+    //             <p>Gracias por su reserva. No hay productos en su carrito, pero su reserva ha sido registrada correctamente.</p>
+    //         `;
+    //     } else {
+    //         // Si hay productos, confirmar carrito
+    //         cartModal.style.display = 'none'; // Cerrar el modal
+    //         confirmationMessage.style.display = 'block';
+    //         confirmationMessage.innerHTML = `
+    //             <h3>¡Su reserva ha sido realizada con éxito!</h3>
+    //             <p>Gracias por su compra. ¡Nos vemos pronto!</p>
+    //             <p>Productos reservados: ${cart.map(item => item.name).join(', ')}</p>
+    //         `;
+    //     }
 
-        // Limpiar carrito después de la reserva
-        localStorage.removeItem('cart');
-        cart = [];
-        updateCartUI(); // Refrescar la interfaz del carrito
+    //     // Limpiar carrito después de la reserva
+    //     localStorage.removeItem('cart');
+    //     cart = [];
+    //     updateCartUI(); // Refrescar la interfaz del carrito
+    //      updateCartBookingUI();
 
-        // Enviar el formulario de reserva
-        reservationForm.submit();
-    });
+    //     // Enviar el formulario de reserva
+    //     reservationForm.submit();
+    // });
 
     // 🚀 Agregar funcionalidad a todos los botones "Añadir al Carrito"
     addToCartButtons.forEach(button => {
@@ -201,11 +240,42 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     updateCartUI();
+     updateCartBookingUI();
+
+    // sendBookingButton.addEventListener('click', () => {
+    //     if (cart.length === 0) {
+    //         // Si el carrito está vacío, continuar con la reserva sin productos
+    //         confirmationMessage.style.display = 'block';
+    //         confirmationMessage.innerHTML = `
+    //             <h3>¡Su reserva ha sido realizada con éxito!</h3>
+    //             <p>Gracias por su reserva. No hay productos en su carrito, pero su reserva ha sido registrada correctamente.</p>
+    //         `;
+    //     } else {
+    //         // Si hay productos, confirmar carrito
+    //         cartModal.style.display = 'none'; // Cerrar el modal
+    //         confirmationMessage.style.display = 'block';
+    //         confirmationMessage.innerHTML = `
+    //             <h3>¡Su reserva ha sido realizada con éxito!</h3>
+    //             <p>Gracias por su compra. ¡Nos vemos pronto!</p>
+    //             <p>Productos reservados: ${cart.map(item => item.name).join(', ')}</p>
+    //         `;
+    //     }
+
+    //     // Limpiar carrito después de la reserva
+    //     localStorage.removeItem('cart');
+    //     cart = [];
+    //     updateCartUI(); // Refrescar la interfaz del carrito
+    //      updateCartBookingUI();
+
+    //     // Enviar el formulario de reserva
+    //     reservationForm.submit();
+    // });
+
 
     // Evitar el envío del formulario si está presente en la página
-    reservationForm.addEventListener('submit', (e) => {
-        e.preventDefault();  // Evitar el envío a Formspree
-    });
+    // reservationForm.addEventListener('submit', (e) => {
+    //     e.preventDefault();  // Evitar el envío a Formspree
+    // });
 });
 
 
@@ -214,7 +284,7 @@ document.addEventListener('DOMContentLoaded', () => {
 document.addEventListener("DOMContentLoaded", () => {
   const form = document.getElementById("reservation-form");
 
-  form.addEventListener("submit", (e) => {
+  form?.addEventListener("submit", (e) => {
     const name = document.getElementById("name").value.trim();
     const surname = document.getElementById("surname").value.trim();
     const numPeople = document.getElementById("num-people").value.trim();

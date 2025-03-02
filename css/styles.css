@@ -179,13 +179,13 @@ footer {
     color: #5b3d1d;
 }
 
-#cart-items {
+#cart-items, #cart-booking-items {
     list-style: none;
     padding: 0;
     margin: 1rem 0;
 }
 
-#cart-items li {
+#cart-items li, #cart-booking-items li {
     background: #f6eee1;
     padding: 0.8rem;
     margin: 0.5rem 0;
@@ -246,7 +246,7 @@ footer {
 }
 
 /* --- Botón de Eliminar Plato del Carrito --- */
-#cart-items button {
+#cart-items button, #cart-booking-items button {
     background-color: #d9534f;
     color: white;
     border: none;
@@ -256,7 +256,7 @@ footer {
     cursor: pointer;
 }
 
-#cart-items button:hover {
+#cart-items button:hover, #cart-booking-items button:hover {
     background-color: #c9302c;
 }
 
