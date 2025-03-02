@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/styles.css">
+    <title>Sin Remordimientos - Carta</title>
+    </head>
+    
+    <body>
+        <header>
+            <nav>
+                <ul class="navbar">
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="menu.html">Carta</a></li>
+                    <li><a href="specialties.html">Especialidades</a></li>
+                    <li><a href="groupsmenu.html">Menú para Grupos</a></li>
+                    <li><a href="bookings.html">Reservas</a></li>
+                </ul>
+            </nav>
+            <button id="cart-button" class="cart-button">
+                🛒 Carrito <span id="cart-count" class="cart-count">0</span>
+            </button>
+        </header>
+    
+        <main>
+            <section class="menu-section">
+                <h1>Nuestra Carta</h1>
+
+            <section id="menu-filters">
+                <h2>Filtrar por:</h2>
+                <label>
+                    <input type="checkbox" id="filter-vegan" value="vegan"> Vegano
+                </label>
+                <label>
+                    <input type="checkbox" id="filter-spicy" value="spicy"> Picante
+                </label>
+                <label>
+                    <input type="checkbox" id="filter-gluten-free" value="gluten-free"> Sin gluten
+                </label>
+            </section>
+
+                <!-- Entrantes -->
+            <div class="menu-images-container">
+                <div class="menu-category">
+                    <h2>Entrantes</h2>
+                    <div class="menu-items">
+                        <div class="menu-item" data-category="gluten-free">
+                            <img src="../images/entrante1.jpeg" alt="Ensalada verde">
+                            <h3>Ensalada Verde</h3>
+                            <p>Una mezcla de hojas y/o brotes, pepino y aguacate con aliño de mostaza y miel.</p>
+                            <p class="price">€5.00</p>
+                            <button class="add-to-cart" data-name="Ensalada Verde" data-price="5.00">Añadir al Carrito</button>
+                        </div>
+                        <div class="menu-item" data-category="vegan gluten-free">
+                            <img src="../images/entrante2.jpeg" alt="Crema de calabaza">
+                            <h3>Crema de Calabaza</h3>
+                            <p>Crema de calabaza y puerro con especias naturales y semillas variadas.</p>
+                            <p class="price">€5.00</p>
+                            <button class="add-to-cart" data-name="Crema de Calabaza" data-price="5.00">Añadir al Carrito</button>
+                        </div>
+                        <div class="menu-item" data-category="vegan gluten-free">
+                            <img src="../images/entrante3.jpeg" alt="Hummus con crudités">
+                            <h3>Hummus con Crudités</h3>
+                            <p>Hummus casero acompañado de zanahorias y apio frescos.</p>
+                            <p class="price">€5.00</p>
+                            <button class="add-to-cart" data-name="Hummus con Crudités" data-price="5.00">Añadir al Carrito</button>
+                        </div>
+                    </div>
+                </div>
+    
+                <!-- Platos Principales -->
+                <div class="menu-category">
+                    <h2>Platos Principales</h2>
+                    <div class="menu-items">
+                        <div class="menu-item" data-category="spicy">
+                            <img src="../images/principal1.jpeg" alt="Pollo orgánico picante">
+                            <h3>Pollo Orgánico Picante</h3>
+                            <p>Pollo a la parrilla con guarnición de verduras a la plancha.</p>
+                            <p class="price">€12.00</p>
+                            <button class="add-to-cart" data-name="Pollo Orgánico Picante" data-price="12.00">Añadir al Carrito</button>
+                        </div>
+                        <div class="menu-item" data-category="vegan gluten-free">
+                            <img src="../images/principal2.jpeg" alt="Quinoa bowl">
+                            <h3>Quinoa Bowl</h3>
+                            <p>Quinoa con garbanzos, espinacas baby y un toque de lima.</p>
+                            <p class="price">€10.50</p>
+                            <button class="add-to-cart" data-name="Quinoa Bowl" data-price="10.50">Añadir al Carrito</button>
+                        </div>
+                        <div class="menu-item" data-category="gluten-free">
+                            <img src="../images/principal3.jpeg" alt="Salmón al horno">
+                            <h3>Salmón al Horno</h3>
+                            <p>Salmón noruego con salsa de eneldo y batata asada.</p>
+                            <p class="price">€14.00</p>
+                            <button class="add-to-cart" data-name="Salmón al Horno" data-price="14.00">Añadir al Carrito</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Postres -->
+                <div class="menu-category">
+                    <h2>Postres</h2>
+                    <div class="menu-items">
+                        <div class="menu-item" data-category="vegan">
+                            <img src="../images/postre1.jpeg" alt="Brownie vegano">
+                            <h3>Brownie Vegano</h3>
+                            <p>Brownie sin azúcar refinada ni productos lácteos.</p>
+                            <p class="price">€4.50</p>
+                            <button class="add-to-cart" data-name="Brownie Vegano" data-price="4.50">Añadir al Carrito</button>
+                        </div>
+                        <div class="menu-item" data-category="vegan gluten-free">
+                            <img src="../images/postre2.jpeg" alt="Fruta fresca">
+                            <h3>Fruta Fresca</h3>
+                            <p>Surtido de frutas de temporada, siempre frescas.</p>
+                            <p class="price">€3.50</p>
+                            <button class="add-to-cart" data-name="Fruta Fresca" data-price="3.50">Añadir al Carrito</button>
+                        </div>
+                        <div class="menu-item" data-category="vegan">
+                            <img src="../images/postre3.jpeg" alt="Panna cotta light">
+                            <h3>Panna Cotta Light</h3>
+                            <p>Suave y ligero con frutos rojos.</p>
+                            <p class="price">€4.00</p>
+                            <button class="add-to-cart" data-name="Panna Cotta Light" data-price="4.00">Añadir al Carrito</button>
+                        </div>
+                    </div>
+                </div>
+    
+                <!-- Bebidas -->
+                <div class="menu-category">
+                    <h2>Bebidas</h2>
+                    <div class="menu-items">
+                        <div class="menu-item" data-category="vegan gluten-free">
+                            <img src="../images/zumo.jpg" alt="Zumo verde">
+                            <h3>Zumo Verde</h3>
+                            <p>Mezcla de espinacas, aguacate y jengibre.</p>
+                            <p class="price">€3.50</p>
+                            <button class="add-to-cart" data-name="Zumo Verde" data-price="3.50">Añadir al Carrito</button>
+                        </div>
+                        <div class="menu-item" data-category="vegan gluten-free">
+                            <img src="../images/agua.jpg" alt="Agua">
+                            <h3>Agua Mineral</h3>
+                            <p>Agua natural en botella reciclable.</p>
+                            <p class="price">€2.00</p>
+                            <button class="add-to-cart" data-name="Agua Mineral" data-price="2.00">Añadir al Carrito</button>
+                        </div>
+                        <div class="menu-item" data-category="vegan">
+                            <img src="../images/cerveza.jpg" alt="Cevreza ecológica">
+                            <h3>Cerveza Ecológica</h3>
+                            <p>Hecha con ingredientes orgánicos.</p>
+                            <p class="price">€4.00</p>
+                            <button class="add-to-cart" data-name="Cerveza Ecológica" data-price="4.00">Añadir al Carrito</button>
+                        </div>
+                    </div>
+                </div>
+    
+                <!-- Comida para Llevar -->
+                <div class="menu-category">
+                    <h2>Comida para Llevar</h2>
+                    <div class="menu-items">
+                        <div class="menu-item" data-category="saludable">
+                            <img src="../images/takeaway.jpg" alt="Para llevar">
+                            <h3>Pack Saludable</h3>
+                            <p>Ensalada Verde, Salmón al Horno, Panna Cotta Light (Bebidas a parte).</p>
+                            <p class="price">€23.50</p>
+                            <button class="add-to-cart" data-name="Pack Saludable" data-price="23.50">Añadir al Carrito</button>
+                        </div>
+                        <div class="menu-item" data-category="vegan">
+                            <img src="../images/takeaway.jpg" alt="Para llevar">
+                            <h3>Pack Vegano</h3>
+                            <p>Hummus Con crudités, Quinoa Bowl, Brownie Vegano (Bebidas a parte).</p>
+                            <p class="price">€20.00</p>
+                            <button class="add-to-cart" data-name="Packe Vegano" data-price="20.00">Añadir al Carrito</button>
+                        </div>
+                        <div class="menu-item" data-category="spicy">
+                            <img src="../images/takeaway.jpg" alt="Para llevar">
+                            <h3>Pack Ecológico</h3>
+                            <p>Crema de Calabaza, Pollo Orgánico Picante, Frutas Variadas (Bebidas a parte).</p>
+                            <p class="price">€20.50</p>
+                            <button class="add-to-cart" data-name="Pack Ecológico" data-price="20.50">Añadir al Carrito</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            </section>
+
+            <!-- Modal -->
+            <div id="menuImageModal" class="menu-modal">
+                <span id="closeMenuModal" class="menu-close">&times;</span>
+                <img id="menuModalImage" class="menu-modal-content">
+            </div>
+
+
+            <p>
+                <a href="allergens.html" class="allergen-link">Consulta nuestra lista de alérgenos</a>
+            </p>
+        </main>
+
+<footer>
+    <div class="footer-column">
+        <h3>Términos y Condiciones</h3>
+        <ul class="footer-links">
+            <li>&copy; 2025 Restaurante Gourmet</li>
+            <li><a href="../policyandlegal/legalnotice.html">Aviso Legal</a></li>
+            <li><a href="../policyandlegal/privacypolicy.html">Política de Privacidad</a></li>
+            <li><a href="../policyandlegal/cookiespolicy.html">Política de Cookies</a></li>
+        </ul>
+    </div>
+
+    <div class="footer-column">
+        <h3>Redes Sociales</h3>
+        <ul class="social-links">
+            <li><a href="https://www.facebook.com" target="_blank">Facebook</a></li>
+            <li><a href="https://www.instagram.com" target="_blank">Instagram</a></li>
+            <li><a href="https://www.twitter.com" target="_blank">Twitter</a></li>
+        </ul>
+    </div>
+
+    <div class="footer-column">
+        <h3>Información</h3>
+        <section class="contact-info">
+            <p>Contacto: <a href="mailto:sinremordimientos@gmail.com">sinremordimientos@gmail.com</a></p>
+            <p>Tel: <a href="tel:+34 123 456 789">+34 123 456 789</a></p>
+            <p>Dirección: Paseo de la Castellana 78, Madrid, España</p>
+        </section>
+    </div>
+</footer>
+
+<div id="cart-modal" class="modal">
+    <div class="modal-content">
+        <span id="close-cart-modal" class="close">&times;</span>
+        <h2>Carrito de Compras</h2>
+        <ul id="cart-items"></ul>
+        <p>Total: <span id="cart-total">0.00</span>€</p>
+        <button id="confirm-cart">Confirmar Pedido</button>
+    </div>
+</div>
+
+<div id="cookie-banner">
+    <p>Usamos cookies para mejorar tu experiencia.
+        <a href="../policyandlegal/cookiespolicy.html" target="_blank">Leer más</a>
+    </p>
+    <button id="accept-necessary-cookies">Aceptar Solo Necesarias</button>
+    <button id="accept-all-cookies">Aceptar Todas</button>
+</div>
+
+    <script src="../js/script.js"></script>
+    
+</body>
+
+</html>

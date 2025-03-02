@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/styles.css">
+    <title>Sin Remordimientos - Especialidades</title>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <ul class="navbar">
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="menu.html">Carta</a></li>
+                <li><a href="specialties.html">Especialidades</a></li>
+                <li><a href="groupsmenu.html">Menú para Grupos</a></li>
+                <li><a href="bookings.html">Reservas</a></li>
+            </ul>
+        </nav>
+        <button id="cart-button" class="cart-button">
+            🛒 Carrito <span id="cart-count" class="cart-count">0</span>
+        </button>
+    </header>
+
+    <main>
+        <section class="specialties-intro">
+            <h1>Especialidades Sin Remordimientos</h1>
+            <p>En Sin Remordimientos, nuestras especialidades reflejan lo mejor de nuestra filosofía: platos saludables,
+                deliciosos y preparados con ingredientes de la más alta calidad.<br> Cada especialidad ha sido seleccionada
+                por su popularidad entre nuestros clientes y su excepcional combinación de sabores.</p>
+        </section>
+
+        <section class="specialties-list">
+            <!-- Especialidad: Hummus -->
+            <div class="specialty-box">
+                <img src="../images/hummus.jpeg" alt="Hummus saludable">
+                <div class="specialty-content">
+                    <h2>Hummus con Crudités</h2>
+                <p>Este plato es el entrante perfecto por su suavidad y versatilidad. Nuestro hummus está preparado
+                    con garbanzos orgánicos, un toque de ajo y especias frescas, acompañado de crudités
+                    como zanahorias y apio. Es una opción perfecta para comenzar cualquier comida de forma
+                    saludable.</p>
+            </div>
+        </div>
+
+            <!-- Especialidad: Platos Principales -->
+        <div class="specialty-box">
+            <img src="../images/salmon.jpeg" alt="Salmón Grill">
+            <div class="specialty-content">
+                <h2>Salmón al Horno</h2>
+                
+                <p>El salmón es uno de nuestros platos más pedidos, gracias a su exquisito sabor y beneficios
+                    nutricionales. Preparado con eneldo y un toque de limón, este plato proporciona toda una
+                    experiencia culinaria. Ideal para los amantes de los pescados.</p>
+            </div>
+        </div>
+
+            <div class="specialty-box">
+                <img src="../images/pollo.jpeg" alt="Pollo Orgánico">
+                <div class="specialty-content">
+                    <h2>Pollo Orgánico con Verduras Asadas</h2>
+                <p>El pollo orgánico es un emblema de nuestra apuesta por ingredientes saludables saludables y sostenibles.
+                Asado lentamente y servido con una guarnición de verduras de temporada, este plato combina
+                tradición y salud en cada bocado. Una verdadera obra maestra de nuestra cocina.</p>
+            </div>
+            </div>
+
+            <div class="specialty-box">
+                <img src="../images/brownie.jpeg" alt="Brownie saludable">
+                <div class="specialty-content">
+                    <h2>Brownie Vegano</h2>
+                <p>El brownie vegano es un postre que rompe mitos. Sin huevos ni lácteos, pero con todo el sabor propio de un brownie y la
+                    textura que uno espera de este postre clásico. Hecho con cacao puro y un toque de nueces, es el postre
+                    ideal para terminar tu experiencia por supuesto sin remordimientos.</p>
+            </div>
+            </div>
+        </section>
+    </main>
+
+<footer>
+    <div class="footer-column">
+        <h3>Términos y Condiciones</h3>
+        <ul class="footer-links">
+            <li>&copy; 2025 Restaurante Gourmet</li>
+            <li><a href="../policyandlegal/legalnotice.html">Aviso Legal</a></li>
+            <li><a href="../policyandlegal/privacypolicy.html">Política de Privacidad</a></li>
+            <li><a href="../policyandlegal/cookiespolicy.html">Política de Cookies</a></li>
+        </ul>
+    </div>
+
+    <div class="footer-column">
+        <h3>Redes Sociales</h3>
+        <ul class="social-links">
+            <li><a href="https://www.facebook.com" target="_blank">Facebook</a></li>
+            <li><a href="https://www.instagram.com" target="_blank">Instagram</a></li>
+            <li><a href="https://www.twitter.com" target="_blank">Twitter</a></li>
+        </ul>
+    </div>
+    
+    <div class="footer-column">
+        <h3>Información</h3>
+        <section class="contact-info">
+            <p>Contacto: <a href="mailto:sinremordimientos@gmail.com">sinremordimientos@gmail.com</a></p>
+            <p>Tel: <a href="tel:+34 123 456 789">+34 123 456 789</a></p>
+            <p>Dirección: Paseo de la Castellana 78, Madrid, España</p>
+        </section>
+    </div>
+</footer>
+
+<div id="cart-modal" class="modal">
+    <div class="modal-content">
+        <span id="close-cart-modal" class="close">&times;</span>
+        <h2>Carrito de Compras</h2>
+        <ul id="cart-items"></ul>
+        <p>Total: <span id="cart-total">0.00</span>€</p>
+        <button id="confirm-cart">Confirmar Pedido</button>
+    </div>
+</div>
+
+<div id="cookie-banner">
+    <p>Usamos cookies para mejorar tu experiencia.
+        <a href="../policyandlegal/cookiespolicy.html" target="_blank">Leer más</a>
+    </p>
+    <button id="accept-necessary-cookies">Aceptar Solo Necesarias</button>
+    <button id="accept-all-cookies">Aceptar Todas</button>
+</div>
+
+
+<script src="../js/script.js"></script>
+</body>
+
+</html>

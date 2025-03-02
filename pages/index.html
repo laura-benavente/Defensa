@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/styles.css">
+    <title> Sin Remordimientos </title>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <ul class="navbar">
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="menu.html">Carta</a></li>
+                <li><a href="specialties.html">Especialidades</a></li>
+                <li><a href="groupsmenu.html">Menú para Grupos</a></li>
+                <li><a href="bookings.html">Reservas</a></li>
+            </ul>
+        </nav>
+    <button id="cart-button" class="cart-button">
+        🛒 Carrito <span id="cart-count" class="cart-count">0</span>
+    </button>
+
+    </header>
+
+    <main>
+        <section class="restaurant-name">
+        <h1>Sin Remordimientos</h1>
+        </section>
+
+        <!-- Sección bienvenida -->
+        <section class="welcome-box">
+            <p>¡Bienvenidos a Sin Remordimientos, el restaurante donde la comida saludable cobra vida! <br>
+            En un mundo donde el bienestar y la nutrición son esenciales, nos enorgullece ofrecer una experiencia gastronómica que no solo es buena para tu cuerpo,
+            sino también para tu alma.<br> Creemos que comer saludable no significa sacrificar el sabor. Desde los primeros
+            bocados hasta el último sorbo, cada detalle está cuidadosamente diseñado para deleitar tus sentidos mientras nutres tu
+            organismo.<br>Nuestro objetivo es demostrar que una alimentación balanceada puede ser emocionante, satisfactoria y, sobre
+            todo, deliciosa. Ya sea que vengas a disfrutar de un almuerzo rápido, una cena íntima o simplemente un momento para ti.<br>
+            ¡Prepárate para saborear una experiencia única sin culpas y con mucho gusto.</p>
+        </section>
+
+        <!-- Sección galería de fotos -->
+        <section class="gallery">
+            <h2>Explora Nuestro Espacio</h2>
+            <div class="gallery-container">
+                <img src="../images/restaurante5.jpeg" alt="Terraza del restaurante 1">
+                <img src="../images/restaurante1.jpeg" alt="Interior del restaurante 1">
+                <img src="../images/restaurante2.jpeg" alt="Interior del restaurante 2">
+                <img src="../images/restaurante3.jpeg" alt="Exterior del restaurante 1">
+                <img src="../images/restaurante4.jpeg" alt="Interior del restaurante 3">
+                <img src="../images/restaurante6.jpg" alt="Interior del restaurante 3">
+            </div>
+            <!-- Modal para imagen ampliada -->
+            <div class="image-modal" id="imageModal">
+                <span class="close-modal" id="closeModal">&times;</span>
+                <img class="modal-content" id="modalImage" alt="Imagen ampliada">
+            </div>
+        </section>
+
+      
+
+        <!-- Sección sobre nosotros -->
+        <section class="about-us-box">
+            <h2>Sobre Nosotros</h2>
+            <p>En Sin Remordimientos, nuestra misión es transformar la manera en que las personas perciben la comida saludable. Nos
+            impulsa el deseo de ofrecer una experiencia culinaria que combine creatividad, sostenibilidad y bienestar.<br> Cada uno de
+            nuestros platos es elaborado con ingredientes frescos y de temporada, obtenidos de proveedores locales que comparten
+            nuestro compromiso con la calidad y el medio ambiente.<br> Pero no solo nos detenemos ahí: creemos en una alimentación
+            consciente, lo que significa que cada receta es el resultado de un equilibrio entre nutrición y sabor. Nuestro equipo
+            está formado por chefs apasionados que entienden que comer bien no tiene por qué ser aburrido.<br> Innovamos constantemente
+            para llevarte opciones que sorprendan tu paladar y, al mismo tiempo, cuiden de ti.<br> Además, estamos comprometidos con la
+            sostenibilidad, utilizando materiales biodegradables, reduciendo el desperdicio de alimentos y promoviendo prácticas
+            responsables en todo lo que hacemos.<br> En Sin Remordimientos, no solo comemos para vivir, ¡vivimos para disfrutar de la
+            buena comida!</p>
+        </section>
+
+        <!-- Sección de otros locales -->
+        <section class="other-locations">
+            <h2>Nuestros Otros Locales</h2>
+            <div class="locations">
+                <div class="location">
+                    <h3>España </h3>
+                    <img src="../images/bilbao.jpg" alt="Restaurante en Bilbao">
+                    <p>Ubicación: Calle Atxuri 1, Bilbao, España</p>
+                </div>
+                <div class="location">
+                    <h3>México</h3>
+                    <img src="../images/cancun.jpg" alt="Restaurante en Cancún">
+                    <p>Ubicación: Avenida Inexistente 234, Cancún, México</p>
+                </div>
+                <div class="location">
+                    <h3>Italia</h3>
+                    <img src="../images/palermo.jpg" alt="Restaurante en Palermo">
+                    <p>Ubicación: Via dei Biscottari 56, Palermo, Italia</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+<footer>
+    <div class="footer-column">
+        <h3>Términos y Condiciones</h3>
+        <ul class="footer-links">
+            <li>&copy; 2025 Restaurante Gourmet</li>
+            <li><a href="../policyandlegal/legalnotice.html">Aviso Legal</a></li>
+            <li><a href="../policyandlegal/privacypolicy.html">Política de Privacidad</a></li>
+            <li><a href="../policyandlegal/cookiespolicy.html">Política de Cookies</a></li>
+        </ul>
+    </div>
+    
+    <div class="footer-column">
+        <h3>Redes Sociales</h3>
+        <ul class="social-links">
+            <li><a href="https://www.facebook.com" target="_blank">Facebook</a></li>
+            <li><a href="https://www.instagram.com" target="_blank">Instagram</a></li>
+            <li><a href="https://www.twitter.com" target="_blank">Twitter</a></li>
+        </ul>
+    </div>
+
+    <div class="footer-column">
+        <h3>Información</h3>
+        <section class="contact-info">
+            <p>Contacto: <a href="mailto:sinremordimientos@gmail.com">sinremordimientos@gmail.com</a></p>
+            <p>Tel: <a href="tel:+34 123 456 789">+34 123 456 789</a></p>
+            <p>Dirección: Paseo de la Castellana 78, Madrid, España</p>
+        </section>
+    </div>
+</footer>
+
+<div id="cart-modal" class="modal">
+    <div class="modal-content">
+        <span id="close-cart-modal" class="close">&times;</span>
+        <h2>Carrito de Compras</h2>
+        <ul id="cart-items"></ul>
+        <p>Total: <span id="cart-total">0.00</span>€</p>
+        <button id="confirm-cart">Confirmar Pedido</button>
+    </div>
+</div>
+
+<div id="cookie-banner">
+    <p>Usamos cookies para mejorar tu experiencia.
+        <a href="../policyandlegal/cookiespolicy.html" target="_blank">Leer más</a>
+    </p>
+    <button id="accept-necessary-cookies">Aceptar Solo Necesarias</button>
+    <button id="accept-all-cookies">Aceptar Todas</button>
+</div>
+
+
+    <script src="../js/script.js"></script>
+</body>
+
+</html>

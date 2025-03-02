@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../css/styles.css">
+  <title>Restaurante - Reservas</title>
+</head>
+
+<body>
+  <header>
+    <nav>
+      <ul class="navbar">
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="menu.html">Carta</a></li>
+        <li><a href="specialties.html">Especialidades</a></li>
+        <li><a href="groupsmenu.html">Menú para Grupos</a></li>
+        <li><a href="bookings.html">Reservas</a></li>
+      </ul>
+    </nav>
+    <button id="cart-button" class="cart-button">
+      🛒 Carrito <span id="cart-count" class="cart-count">0</span>
+    </button>
+  </header>
+
+  <main>
+    <section class="reservation-form">
+      <h1>Reserva tu Mesa</h1>
+      <form id="reservation-form" method="POST" action="https://formspree.io/f/mblleqgd">
+        <div class="form-group">
+          <label for="name">Nombre:</label>
+          <input type="text" id="name" name="name" placeholder="Introduce tu nombre" required>
+        </div>
+        <div class="form-group">
+          <label for="surname">Apellidos:</label>
+          <input type="text" id="surname" name="surname" placeholder="Introduce tus apellidos" required>
+        </div>
+        <div class="form-group">
+          <label for="num-people">Número de personas:</label>
+          <input type="number" id="num-people" name="num-people" placeholder="¿Cuántas personas?" min="1" max="50"
+            required>
+        </div>
+        <div class="form-group">
+          <label for="group">Reserva para grupo:</label>
+          <div class="group-options">
+            <label><input type="radio" name="group" value="yes"> Sí</label>
+            <label><input type="radio" name="group" value="no" checked> No</label>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="date">Fecha de la reserva:</label>
+          <input type="date" id="date" name="date" min="2025-01-01" max="2035-12-31" required>
+        </div>
+        <div class="form-group">
+          <label for="time">Hora de la reserva:</label>
+          <select id="time" name="time" required>
+            <option value="" disabled selected>Selecciona una hora</option>
+            <option value="11:00">11:00</option>
+            <option value="12:00">12:00</option>
+            <option value="13:00">13:00</option>
+            <option value="14:00">14:00</option>
+            <option value="15:00">15:00</option>
+            <option value="16:00">16:00</option>
+            <option value="17:00">17:00</option>
+            <option value="18:00">18:00</option>
+            <option value="19:00">19:00</option>
+            <option value="20:00">20:00</option>
+            <option value="21:00">21:00</option>
+            <option value="22:00">22:00</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="phone">Teléfono:</label>
+          <input type="tel" id="phone" name="phone" placeholder="Introduce tu número de teléfono" required>
+        </div>
+        <div class="form-group">
+          <label for="email">Correo Electrónico:</label>
+          <input type="email" id="email" name="email" placeholder="Introduce tu correo electrónico" required>
+        </div>
+        <button id="send-booking" type="submit" class="btn">Enviar Reserva</button>
+        <div id="confirmation-message"></div>
+      </form>
+    </section>
+
+    <section class="restaurant-location">
+      <h2>Ubicación</h2>
+      <p class="location-address">Dirección: Paseo de la Castellana 78, Madrid, España</p>
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3048.891255344312!2d-3.688010284604174!3d40.447525479360476!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd4228f483b1b1e5%3A0xb34d052fe5d02065!2sPaseo%20de%20la%20Castellana%2C%2078%2C%2028016%20Madrid%2C%20España!5e0!3m2!1ses!2sus!4v1692446920662!5m2!1ses!2sus"
+        width="100%" height="350" style="border:0;" allowfullscreen="" loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade">
+      </iframe>
+    </section>
+
+
+  </main>
+
+  <footer>
+    <div class="footer-column">
+      <h3>Términos y Condiciones</h3>
+      <ul class="footer-links">
+        <li>&copy; 2025 Restaurante Gourmet</li>
+        <li><a href="../policyandlegal/legalnotice.html">Aviso Legal</a></li>
+        <li><a href="../policyandlegal/privacypolicy.html">Política de Privacidad</a></li>
+        <li><a href="../policyandlegal/cookiespolicy.html">Política de Cookies</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-column">
+      <h3>Redes Sociales</h3>
+      <ul class="social-links">
+        <li><a href="https://www.facebook.com" target="_blank">Facebook</a></li>
+        <li><a href="https://www.instagram.com" target="_blank">Instagram</a></li>
+        <li><a href="https://www.twitter.com" target="_blank">Twitter</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-column">
+      <h3>Información</h3>
+      <section class="contact-info">
+        <p>Contacto: <a href="mailto:sinremordimientos@gmail.com">sinremordimientos@gmail.com</a></p>
+        <p>Tel: <a href="tel:+34 123 456 789">+34 123 456 789</a></p>
+        <p>Dirección: Paseo de la Castellana 78, Madrid, España</p>
+      </section>
+    </div>
+  </footer>
+
+  <div id="cart-modal" class="modal">
+    <div class="modal-content">
+      <span id="close-cart-modal" class="close">&times;</span>
+      <h2>Carrito de Compras</h2>
+      <ul id="cart-items"></ul>
+      <p>Total: <span id="cart-total">0.00</span>€</p>
+      <button id="confirm-cart">Confirmar Pedido</button>
+    </div>
+  </div>
+
+  <div id="cookie-banner">
+    <p>Usamos cookies para mejorar tu experiencia.
+      <a href="../policyandlegal/cookiespolicy.html" target="_blank">Leer más</a>
+    </p>
+    <button id="accept-necessary-cookies">Aceptar Solo Necesarias</button>
+    <button id="accept-all-cookies">Aceptar Todas</button>
+  </div>
+
+  <script src="../js/script.js"></script>
+</body>
+
+</html>

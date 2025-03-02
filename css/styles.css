@@ -1,0 +1,1400 @@
+/* Estilos generales*/
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #d9c4a0;
+    color: #5a4d3b;
+}
+
+header {
+    background-color: #8b6f47;
+    color: white;
+    padding: 1rem;
+}
+
+.navbar {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar li a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+}
+
+/* Estilos del footer */
+footer {
+    background-color: #5a4d3b;
+    color: #f6eee1;
+    padding: 1.5rem 1rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.footer-column {
+    flex: 1;
+    min-width: 200px;
+    max-width: 300px;
+    text-align: center;
+}
+
+.footer-column h3 {
+    margin-bottom: 0.3rem;
+    font-size: 1.2rem;
+    color: #f6eee1;
+    text-transform: uppercase;
+}
+
+/* Estilo de listas en el footer */
+.footer-links,
+.social-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+}
+
+.footer-links li,
+.social-links li {
+    font-size: 0.9rem;
+}
+
+/* Estilos generales para enlaces en el footer */
+.footer-links li a,
+.social-links li a,
+.contact-info a {
+    text-decoration: none;
+    color: #f6eee1;
+    font-size: 0.9rem;
+}
+
+/* Efecto hover */
+.footer-links li a:hover,
+.social-links li a:hover,
+.contact-info a:hover {
+    text-decoration: underline;
+}
+
+/* Estilos de la información de contacto */
+.contact-info p {
+    margin: 0.2rem 0;
+    font-size: 0.9rem;
+}
+
+/* boton carrito */
+
+.cart-button {
+    background-color: #8b6f47;
+    /* Mismo color que el header */
+    color: white;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    padding: 0.5rem 0.8rem;
+    cursor: pointer;
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+/* Ajustes cuando se pasa el mouse */
+.cart-button:hover {
+    background-color: #5a4d3b;
+    /* Un tono más oscuro en hover */
+    transform: scale(1.05);
+}
+
+/* Contador del carrito */
+.cart-count {
+    background-color: #d9c4a0;
+    /* Color similar al fondo */
+    color: #5a4d3b;
+    font-weight: bold;
+    border-radius: 50%;
+    width: 18px;
+    height: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.75rem;
+}
+
+/* Ubicación dentro del header */
+.header-container {
+    display: flex;
+    justify-content: right;
+    /* Alinea a la derecha */
+    align-items: center;
+    padding: 1rem;
+}
+
+/* --- Estilos del Modal del Carrito --- */
+#cart-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background-color: #fff8ec;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    width: 90%;
+    max-width: 400px;
+}
+
+.modal-content h2 {
+    color: #5b3d1d;
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+}
+
+.close {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: #5b3d1d;
+}
+
+#cart-items {
+    list-style: none;
+    padding: 0;
+    margin: 1rem 0;
+}
+
+#cart-items li {
+    background: #f6eee1;
+    padding: 0.8rem;
+    margin: 0.5rem 0;
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#cart-total {
+    font-weight: bold;
+    font-size: 1.2rem;
+    color: #8b6f47;
+}
+
+#confirm-cart {
+    background-color: #8b6f47;
+    color: white;
+    border: none;
+    padding: 0.8rem 1.2rem;
+    font-size: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 1rem;
+    transition: background 0.3s;
+}
+
+#confirm-cart:hover {
+    background-color: #5a4d3b;
+}
+
+/* --- Botón para Cerrar el Modal --- */
+#close-cart-modal {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: #5a4d3b;
+}
+
+/* --- Estilos para los Botones de Añadir al Carrito --- */
+.add-to-cart {
+    background-color: #5a4d3b;
+    color: white;
+    border: none;
+    padding: 0.8rem 1rem;
+    font-size: 1rem;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+    display: block;
+    margin: 1rem auto;
+    transition: background 0.3s;
+}
+
+.add-to-cart:hover {
+    background-color: #8b6f47;
+}
+
+/* --- Botón de Eliminar Plato del Carrito --- */
+#cart-items button {
+    background-color: #d9534f;
+    color: white;
+    border: none;
+    padding: 0.4rem 0.6rem;
+    font-size: 0.9rem;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#cart-items button:hover {
+    background-color: #c9302c;
+}
+
+/*Seccion de bienvenida y sobre nosotros*/
+.restaurant-name {
+    font-size: 3rem;
+    font-family: 'Times New Roman', Times, serif;
+    text-align: center;
+    background-color: #d9c4a0;
+}
+
+.welcome-box {
+    text-align: center;
+    border: 1px solid #d4c8b0;
+    border-radius: 8px;
+    background-color: #fff8ecc2;
+    padding: 1.5rem;
+    margin: 4rem 10rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.about-us-box {
+    text-align: center;
+    border: 1px solid #d4c8b0;
+    border-radius: 8px;
+    background-color: #fff8ecc2;
+    padding: 1.5rem;
+    margin: 4rem 10rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.about-us-box h2 {
+    font-size: 1.5rem;
+    color: #5b3d1d;
+    margin-bottom: 1rem;
+}
+
+.welcome-box p,
+.about-us-box p {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.2rem;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* galeria imagenes de página principal*/
+.gallery {
+    padding: 3rem 1rem;
+    text-align: center;
+    background-color: #fff8ec;
+}
+
+.gallery h2 {
+    margin-bottom: 2rem;
+    font-size: 2rem;
+    color: #333;
+}
+
+.gallery-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+    padding: 1rem;
+    max-width: 80%;
+    margin: 0 auto;
+}
+
+.gallery-container img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+
+.gallery-container img:hover {
+    transform: scale(1.05);
+}
+
+
+/* Modal de la página principal */
+.image-modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-content {
+    max-width: 50%;
+    max-height: 80%;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(255, 255, 255, 0.2);
+}
+
+.close-modal {
+    position: absolute;
+    top: 10%;
+    right: 5%;
+    color: white;
+    font-size: 2rem;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.close-modal:hover {
+    transform: scale(1.2);
+}
+
+/* Otras localizaciones */
+.other-locations {
+    padding: 1rem;
+    background-color: #d9c4a0;
+    text-align: center;
+}
+
+.locations {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.location {
+    background-color: #fff8ec;
+    padding: 1rem;
+    border-radius: 8px;
+    text-align: center;
+    width: 30%;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.location p {
+    font-size: 1.2rem;
+}
+
+.location img {
+    width: 100%;
+    max-width: 600px;
+    height: 200px;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+    object-fit: cover;
+}
+
+.location h3 {
+    font-size: 1.5rem;
+    color: #8b6f47;
+}
+
+/*Menú*/
+.menu-section {
+    padding: 2rem;
+    background-color: #d9c4a0;
+    text-align: center;
+}
+
+.menu-section h1 {
+    font-size: 3rem;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.menu-section p {
+    font-size: 1.2rem;
+}
+.menu-category {
+    margin-bottom: 2rem;
+}
+
+.menu-category h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: #8b6f47;
+    text-align: center;
+}
+
+.menu-items {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.menu-item {
+    flex: 1 1 calc(25% - 1rem);
+    background-color: #fff8ecc2;
+    padding: 1rem;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.menu-item img {
+    width: 50%;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+}
+
+.menu-item h3 {
+    font-size: 1.2rem;
+    color: #8b6f47;
+    margin-bottom: 0.5rem;
+}
+
+/* Modal menú */
+.menu-modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.8);
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.menu-modal-content {
+    max-width: 80%;
+    max-height: 80%;
+    margin: auto;
+    display: block;
+    border-radius: 8px;
+    animation: fadeIn 0.3s;
+    cursor: default;
+}
+
+.menu-images-container img {
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.menu-images-container img:hover {
+    transform: scale(1.05);
+}
+
+.menu-close {
+    position: absolute;
+    top: 20px;
+    right: 40px;
+    color: white;
+    font-size: 2rem;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.menu-close:hover {
+    color: #ccc;
+    text-decoration: none;
+}
+
+/* Alérgenos del menú */
+.allergens-intro {
+    text-align: center;
+}
+
+.allergens-intro h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.allergens-intro p {
+   font-size: 1.2rem;
+}
+
+.allergens-category {
+    margin: 2rem 1rem;
+    padding: 1rem;
+    background-color: #f7f1e8;
+    border: 1px solid #d4c8b0;
+    border-radius: 8px;
+}
+
+.allergens-category h2 {
+    color: #5b3d1d;
+    margin-bottom: 1rem;
+}
+
+.allergens-category ul {
+    list-style: none;
+    margin-left: 0;
+    padding-left: 0;
+}
+
+.allergens-category li {
+    font-size: 1rem;
+    line-height: 1.5;
+    margin-bottom: 0.5rem;
+}
+
+.allergen-link {
+    display: block;
+    text-align: center;
+    margin-top: 2rem;
+    color: #8b6f47;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.allergen-link:hover {
+    text-decoration: underline;
+}
+
+/* Especialidades */
+.specialties-intro {
+    padding: 2rem;
+    background-color: #d9c4a0;
+    text-align: center;
+    font-size: 2rem;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.specialties-intro p {
+    font-size: 1.2rem;
+    margin-top: 0.5rem;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.specialties-list {
+    background-color: #d9c4a0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: center;
+    margin: 2rem 1rem;
+}
+
+.specialties-list h2 {
+    font-size: 2rem;
+}
+
+.specialty-box {
+    border: 1px solid #d4c8b0;
+    border-radius: 8px;
+    background-color: #fff8ecc2;
+    max-width: 300px;
+    padding: 1rem;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 1rem 2rem;
+}
+
+.specialty-box img {
+    width: 100%;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+}
+
+.specialty-box h2 {
+    color: #8b6f47;
+    margin-bottom: 0.5rem;
+}
+
+.specialty-box p {
+    font-size: 1.2rem;
+    color: #333;
+    line-height: 1.5;
+}
+
+/* Menús de grupo */
+.group-menus-intro {
+    padding: 2rem;
+    text-align: center;
+    background-color: #d9c4a0;
+    font-size: 2rem;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.group-menus-intro p {
+    font-size: 1.2rem;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.group-menus h2,
+.special-menus h2 {
+    text-align: center;
+    font-size: 2rem;
+    color: #8b6f47;
+    margin: 2rem 0 1rem;
+}
+/* Acordeón */
+details {
+    background-color: #fff8ecc2;
+    border: 1px solid #e4d9c3;
+    border-radius: 8px;
+    padding: 1rem;
+    margin: 1rem auto;
+    max-width: 800px;
+}
+
+summary {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #8b6f47;
+    cursor: pointer;
+    padding: 1rem;
+    background-color: #f5e6ca;
+    border-radius: 8px;
+    list-style: none;
+}
+
+summary:hover {
+    background-color: #e4d9c3;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+details p,
+details ul {
+    font-size: 1.2rem;
+    color: #4a3f35;
+    padding-left: 1rem;
+}
+
+.reservation-link {
+    text-align: center;
+    font-size: 1.2rem;
+}
+
+/*  Enlace a reservas desde menú grupos*/
+.booking-button {
+    display: inline-block;
+    background-color: #8b6f47;
+    color: #fff;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    margin-top: 1rem;
+}
+
+.booking-button:hover {
+    background-color: #705838;
+}
+
+/* Alérgenos menú de grupos*/
+.allergens-intro2 {
+    text-align: center;
+    padding: 1.5rem;
+}
+.allergens-intro2 h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.allergens-intro2 p {
+    font-size: 1.2rem;
+}
+
+.allergens-group {
+    margin: 2rem 1rem;
+    padding: 1rem;
+    background-color: #f7f1e8;
+    border: 1px solid #d4c8b0;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.allergens-group h2,
+.special-menu h3 {
+    color: #5b3d1d;
+    margin-bottom: 0.5rem;
+}
+
+.allergens-group ul {
+    list-style: none;
+}
+
+.allergens-group li {
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+.allergens-group-link {
+    display: block;
+    text-align: center;
+    margin-top: 2rem;
+    color: #8b6f47;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.allergens-group-link:hover {
+    text-decoration: underline;
+}
+
+/* Formulario de reservas */
+.reservation-form {
+    max-width: 600px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background-color: #f9f5f0;
+    border: 1px solid #d4c8b0;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.reservation-form h1 {
+    text-align: center;
+    color: #6b4f3b;
+    margin-bottom: 1.5rem;
+}
+
+.form-group {
+    margin-bottom: 1.2rem;
+}
+
+.form-group label {
+    display: block;
+    font-weight: bold;
+    color: #6b4f3b;
+    margin-bottom: 0.5rem;
+}
+
+.form-group input[type="text"],
+.form-group input[type="number"],
+.form-group input[type="date"],
+.form-group input[type="tel"],
+.form-group input[type="email"] {
+    width: 100%;
+    padding: 0.8rem;
+    font-size: 1rem;
+    border: 1px solid #d4c8b0;
+    border-radius: 5px;
+    background-color: #fff;
+    box-sizing: border-box;
+}
+
+.form-group input:focus {
+    border-color: #6b4f3b;
+    outline: none;
+}
+
+.group-options {
+    display: flex;
+    gap: 1rem;
+    margin-top: 0.5rem;
+}
+
+.group-options label {
+    font-weight: normal;
+    color: #6b4f3b;
+}
+
+.form-group select {
+    width: 100%;
+    padding: 0.8rem;
+    font-size: 1rem;
+    border: 1px solid #d4c8b0;
+    border-radius: 5px;
+    background-color: #fff;
+    box-sizing: border-box;
+}
+
+.form-group select:focus {
+    border-color: #6b4f3b;
+    outline: none;
+}
+
+.btn {
+    display: block;
+    width: 100%;
+    padding: 0.8rem;
+    font-size: 1rem;
+    font-weight: bold;
+    color: #fff;
+    background-color: #6b4f3b;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.btn:hover {
+    background-color: #54392a;
+}
+
+input:invalid {
+    border-color: red;
+}
+
+input:valid {
+    border-color: green;
+} 
+
+/* Estilo para la sección de ubicación */
+.restaurant-location {
+    margin: 2rem auto;
+    padding: 2rem;
+    background-color: #f8f4ee;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.restaurant-location h2 {
+    font-size: 2rem;
+    color: #8b6f47;
+    margin-bottom: 1rem;
+}
+
+.location-address {
+    font-size: 1.2rem;
+    color: #555;
+    margin-bottom: 1rem;
+}
+
+.restaurant-location iframe {
+    width: 100%;
+    height: 350px;
+    border: 0;
+    border-radius: 8px;
+}
+
+/*Policy and legal*/
+/*Política de privacidad*/
+.container {
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 1.5rem;
+    background-color: #fefefe;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    color: #333;
+}
+
+/* Títulos principales */
+.container h1 {
+    font-size: 2.5rem;
+    color: #5a4d3b;
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+/* Subtítulos */
+.container h2 {
+    font-size: 1.8rem;
+    color: #8b6f47;
+    margin-bottom: 1rem;
+    border-bottom: 2px solid #d4c8b0;
+    padding-bottom: 0.3rem;
+}
+
+/* Párrafos */
+.container p {
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+    color: #444;
+}
+
+/* Links */
+.container a {
+    color: #8b6f47;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.container a:hover {
+    text-decoration: underline;
+}
+
+/* Listas no ordenadas */
+.container ul {
+    list-style-type: disc;
+    margin-left: 2rem;
+    margin-bottom: 1.5rem;
+    padding-left: 0;
+}
+
+.container ul li {
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+.container strong {
+    color: #5b3d1d;
+    font-weight: bold;
+}
+
+/* Estilo del banner */
+#cookie-banner {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #8b6f47;
+    color: white;
+    padding: 15px;
+    text-align: center;
+    font-size: 16px;
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Enlace dentro del banner */
+#cookie-banner a {
+    color: #ffcc00;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+#cookie-banner a:hover {
+    text-decoration: underline;
+}
+
+/* Botón de aceptación */
+#cookie-banner button {
+    background-color: #5b3d1d;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 10px;
+    border-radius: 5px;
+}
+
+#cookie-banner button:hover {
+    background-color: #e0b800;
+}
+
+/* Diseño responsive */
+@media screen and (max-width: 768px) {
+
+/* Estilos generales */
+body {
+        padding: 0;
+        margin: 0;
+        font-size: 16px;
+    }
+
+ header {
+     padding: 0.5rem;
+ }
+
+ .navbar {
+     flex-direction: column;
+     gap: 0.5rem;
+     align-items: center;
+ }
+
+ .navbar li a {
+     font-size: 1rem;
+ }
+
+ footer {
+     text-align: center;
+     padding: 2rem 1rem;
+ }
+
+ .footer-container {
+     display: flex;
+     align-items: flex-start;
+     gap: 2rem;
+     max-width: 1200px;
+     margin: 0 auto;
+ }
+
+ .footer-section {
+     text-align: center;
+     flex: 1;
+ }
+
+ .footer-section h3 {
+     font-size: 1.3rem;
+     margin-bottom: 1rem;
+ }
+
+ .footer-links,
+ .social-links {
+     flex-direction: column;
+     align-items: center;
+ }
+
+ .footer-links li a,
+ .social-links li a {
+     font-size: 0.95rem;
+ }
+
+ /* Nombre del restaurante */
+ .restaurant-name {
+     font-size: 2rem;
+     padding: 1rem;
+ }
+
+ /* Sección de bienvenida */
+ .welcome-box {
+     margin: 2rem 1rem;
+     padding: 1rem;
+     font-size: 1rem;
+ }
+
+ .welcome-box p {
+     font-size: 0.9rem;
+     line-height: 1.5;
+ }
+
+ .gallery-container {
+     max-width: none;
+ }
+ 
+ /* Sección sobre nosotros */
+ .about-us-box {
+     margin: 2rem 1rem;
+     padding: 1rem;
+     font-size: 1rem;
+ }
+
+ .about-us-box h2 {
+     font-size: 1.2rem;
+     margin-bottom: 0.5rem;
+ }
+
+ .about-us-box p {
+     font-size: 0.9rem;
+     line-height: 1.5;
+ }
+
+
+ /* Otras localizaciones */
+ .other-locations {
+     padding: 1rem 0.5rem;
+ }
+
+ .locations {
+     flex-direction: column;
+     gap: 1rem;
+ }
+
+ .location {
+     width: 90%;
+     margin: 0 auto;
+ }
+
+ .location img {
+     width: 100%;
+     margin-bottom: 0.5rem;
+ }
+
+ .location h3 {
+     font-size: 1.2rem;
+ }
+
+ .location p {
+     font-size: 0.9rem;
+ }
+
+ /* Menú */
+ .menu-items {
+     flex-direction: column;
+     gap: 1rem;
+ }
+
+ .menu-item {
+     flex: 1 1 100%;
+ }
+
+ .menu-item img {
+     max-width: 100%;
+     height: auto;
+ }
+
+ .menu-category h2 {
+     font-size: 1.8rem;
+     text-align: center;
+ }
+
+ .menu-item h3 {
+     font-size: 1.4rem;
+ }
+
+ .menu-item p {
+     font-size: 1rem;
+ }
+
+ .menu-section {
+     padding: 1rem;
+ }
+
+ /*Menú alérgenos*/
+ .allergens-intro p {
+     text-align: center;
+     padding: 1rem;
+ }
+
+ .allergens-intro h1 {
+     margin-bottom: 1.5rem;
+     font-family: 'Times New Roman', Times, serif;
+     padding: 1rem;
+ }
+
+ .allergens-category {
+     margin: 2rem 1rem;
+     padding: 1rem;
+     background-color: #f7f1e8;
+     border: 1px solid #d4c8b0;
+     border-radius: 8px;
+     text-align: center;
+ }
+
+ .allergens-category h2 {
+     color: #5b3d1d;
+     margin-bottom: 0.5rem;
+ }
+
+ .allergens-category ul {
+     list-style: none;
+     margin-left: 0;
+     padding-left: 0;
+ }
+
+ .allergens-category li {
+     font-size: 1rem;
+     line-height: 1.5;
+     margin-bottom: 0.5rem;
+ }
+
+ .allergen-link {
+     display: block;
+     text-align: center;
+     margin-top: 2rem;
+     color: #8b6f47;
+     font-weight: bold;
+     text-decoration: none;
+ }
+
+ .allergen-link:hover {
+     text-decoration: underline;
+ }
+
+ /* Especialidades */
+ .specialties-intro {
+    text-align: center;
+    padding: 1rem;
+ }
+ .specialty-item img {
+     width: 100%;
+     height: auto;
+ }
+
+ .specialty-box p {
+     font-size: 1rem;
+     padding: 0 1rem;
+ }
+
+ /*Menú de grupos*/
+ .group-menus-intro {
+     padding: 1rem;
+ }
+
+ .group-menus-intro p {
+     padding: 0 1rem;
+ }
+    
+ .group-menus h2,
+ .special-menus h2 {
+     font-size: 1.5rem;
+ }
+
+ .menu-group ul {
+     font-size: 1rem;
+ }
+
+ .menu-special ul {
+     font-size: 1rem;
+ }
+
+ .menu-group,
+ .menu-special {
+     padding: 1rem;
+     margin: 1rem;
+     max-width: 90%;
+ }
+
+ .menu-group h3,
+ .menu-special h3 {
+     font-size: 1rem;
+ }
+
+ .menu-group p,
+ .menu-special p {
+     font-size: 1rem;
+ }
+
+ .menu-group ul,
+ .menu-special ul {
+     padding-left: 1rem;
+ }
+
+ .reservation-link {
+     margin-top: 1rem;
+     font-size: 1rem;
+ }
+
+ .booking-button {
+     padding: 0.5rem;
+     font-size: 1rem;
+ }
+
+ /* Alergenos menú de grupos*/
+ .allergens-intro2 h1 {
+     margin-bottom: 1rem;
+     padding: 1rem;
+ }
+
+ .allergens-intro2 p {
+     margin: 0 1rem;
+ }
+
+ .allergens-group {
+     margin: 1.5rem 1rem;
+     padding: 1rem;
+     border-radius: 6px;
+ }
+
+ .allergens-group h2,
+ .special-menu h3 {
+     font-size: 1.5rem;
+     margin-bottom: 0.8rem;
+ }
+
+ .allergens-group ul {
+     padding: 0 1rem;
+ }
+
+ .allergens-group li {
+     font-size: 0.9rem;
+     line-height: 1.4;
+ }
+
+ .allergens-group-link {
+     font-size: 1rem;
+     margin-top: 1.5rem;
+ }
+
+ .allergens-group-link:hover {
+     text-decoration: underline;
+ }
+
+ /*Formulario de reservas*/
+.reservation-form {
+    max-width: auto;
+    display: grid;
+    column-gap: 2rem;
+    row-gap: 1.5rem;
+}
+
+.reservation-form h1 {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+}
+
+.form-group {
+    margin-bottom: 1rem;
+}
+
+.form-group input[type="text"],
+.form-group input[type="number"],
+.form-group input[type="date"],
+.form-group input[type="tel"],
+.form-group input[type="email"] 
+.form-group select {
+    font-size: 1rem;
+    text-align: center;
+}
+
+.group-options {
+    align-items: center;
+}
+
+.btn {
+    font-size: 1.1rem;
+    padding: 1rem;
+}
+/*Mensaje de confirmacion*/
+#confirmation-message {
+    background-color: #f8f8f8;
+    padding: 20px;
+    border-radius: 10px;
+    margin-top: 20px;
+}
+
+/*Privacidad y legal*/
+.container {
+    padding: 1rem;
+}
+
+.container h1 {
+    font-size: 2rem;
+}
+
+.container h2 {
+    font-size: 1.5rem;
+}
+
+.container p,
+.container ul li {
+    font-size: 1rem;
+}
+
+.container ul {
+    margin-left: 1.5rem;
+}
+
+/* cookie banner*/
+#cookie-banner {
+    flex-direction: column;
+    text-align: center;
+    padding: 15px;
+    max-width: fit-content;
+}
+
+#cookie-banner p {
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+#cookie-banner button {
+    max-width: 250px;
+    margin: 0 auto;
+    display: block;
+}
+
+}
