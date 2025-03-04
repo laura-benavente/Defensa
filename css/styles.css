@@ -92,10 +92,8 @@ footer {
 }
 
 /* boton carrito */
-
 .cart-button {
     background-color: #8b6f47;
-    /* Mismo color que el header */
     color: white;
     font-weight: bold;
     border: none;
@@ -110,17 +108,12 @@ footer {
     transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
-/* Ajustes cuando se pasa el mouse */
 .cart-button:hover {
     background-color: #5a4d3b;
-    /* Un tono más oscuro en hover */
     transform: scale(1.05);
 }
-
-/* Contador del carrito */
 .cart-count {
     background-color: #d9c4a0;
-    /* Color similar al fondo */
     color: #5a4d3b;
     font-weight: bold;
     border-radius: 50%;
@@ -132,16 +125,14 @@ footer {
     font-size: 0.75rem;
 }
 
-/* Ubicación dentro del header */
 .header-container {
     display: flex;
     justify-content: right;
-    /* Alinea a la derecha */
     align-items: center;
     padding: 1rem;
 }
 
-/* --- Estilos del Modal del Carrito --- */
+/* Modal del Carrito */
 #cart-modal {
     display: none;
     position: fixed;
@@ -201,23 +192,6 @@ footer {
     color: #8b6f47;
 }
 
-#confirm-cart {
-    background-color: #8b6f47;
-    color: white;
-    border: none;
-    padding: 0.8rem 1.2rem;
-    font-size: 1rem;
-    border-radius: 5px;
-    cursor: pointer;
-    margin-top: 1rem;
-    transition: background 0.3s;
-}
-
-#confirm-cart:hover {
-    background-color: #5a4d3b;
-}
-
-/* --- Botón para Cerrar el Modal --- */
 #close-cart-modal {
     background: none;
     border: none;
@@ -226,7 +200,7 @@ footer {
     color: #5a4d3b;
 }
 
-/* --- Estilos para los Botones de Añadir al Carrito --- */
+/* Botones de añadir al Carrito  */
 .add-to-cart {
     background-color: #5a4d3b;
     color: white;
@@ -245,7 +219,7 @@ footer {
     background-color: #8b6f47;
 }
 
-/* --- Botón de Eliminar Plato del Carrito --- */
+/* Botón eliminar plato del carrito */
 #cart-items button, #cart-booking-items button {
     background-color: #d9534f;
     color: white;
@@ -883,7 +857,6 @@ input:valid {
 }
 
 /*Policy and legal*/
-/*Política de privacidad*/
 .container {
     max-width: 800px;
     margin: 2rem auto;
@@ -897,7 +870,6 @@ input:valid {
     color: #333;
 }
 
-/* Títulos principales */
 .container h1 {
     font-size: 2.5rem;
     color: #5a4d3b;
@@ -905,7 +877,6 @@ input:valid {
     margin-bottom: 1.5rem;
 }
 
-/* Subtítulos */
 .container h2 {
     font-size: 1.8rem;
     color: #8b6f47;
@@ -914,14 +885,12 @@ input:valid {
     padding-bottom: 0.3rem;
 }
 
-/* Párrafos */
 .container p {
     font-size: 1.1rem;
     margin-bottom: 1rem;
     color: #444;
 }
 
-/* Links */
 .container a {
     color: #8b6f47;
     font-weight: bold;
@@ -932,7 +901,6 @@ input:valid {
     text-decoration: underline;
 }
 
-/* Listas no ordenadas */
 .container ul {
     list-style-type: disc;
     margin-left: 2rem;
@@ -968,7 +936,6 @@ input:valid {
     justify-content: center;
 }
 
-/* Enlace dentro del banner */
 #cookie-banner a {
     color: #ffcc00;
     text-decoration: none;
@@ -979,7 +946,6 @@ input:valid {
     text-decoration: underline;
 }
 
-/* Botón de aceptación */
 #cookie-banner button {
     background-color: #5b3d1d;
     color: white;

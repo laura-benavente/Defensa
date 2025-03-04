@@ -57,7 +57,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
     filters.forEach(filter => {
         filter.addEventListener("change", function () {
-            // Desmarcar todos los filtros antes de marcar el nuevo
             filters.forEach(f => {
                 if (f !== this) f.checked = false;
             });
@@ -77,10 +76,10 @@ document.addEventListener("DOMContentLoaded", function () {
                 const itemCategories = item.dataset.category.split(" ");
 
                 if (!activeFilter || itemCategories.includes(activeFilter)) {
-                    item.style.display = "block"; // Mostrar plato
+                    item.style.display = "block";
                     visibleItems++;
                 } else {
-                    item.style.display = "none"; // Ocultar plato
+                    item.style.display = "none";
                 }
             });
 
@@ -93,21 +92,20 @@ document.addEventListener("DOMContentLoaded", function () {
 
 //Implementacion del carrito en el formulario de reeservas 
 document.addEventListener('DOMContentLoaded', () => {
-    const cartButton = document.getElementById('cart-button');  // Botón de carrito
-    const cartModal = document.getElementById('cart-modal');  // Modal del carrito
+    const cartButton = document.getElementById('cart-button');
+    const cartModal = document.getElementById('cart-modal'); 
     const cartItemsList = document.getElementById('cart-items');
     const cartBookingItems = document.getElementById('cart-booking-items');
     const cartTotalElement = document.getElementById('cart-total');
     const cartCountElement = document.getElementById('cart-count');
     const cartDataInput = document.getElementById('cart-data');
-    const closeCartButton = document.getElementById('close-cart-modal');  // Botón para cerrar el modal del carrito
-    const confirmationMessage = document.getElementById('confirmation-message');  // Mensaje de confirmación
+    const closeCartButton = document.getElementById('close-cart-modal');
+    const confirmationMessage = document.getElementById('confirmation-message');
     const addToCartButtons = document.querySelectorAll('.add-to-cart');
-    const reservationForm = document.getElementById('reservation-form');  // Formulario de reserva
+    const reservationForm = document.getElementById('reservation-form');
 
     let cart = JSON.parse(localStorage.getItem('cart')) || [];
 
-    // Mostrar carrito
     function updateCartUI() {
         cartItemsList.innerHTML = '';
         let total = 0;
@@ -134,7 +132,6 @@ document.addEventListener('DOMContentLoaded', () => {
         if(cartBookingItems) {
              cartBookingItems.innerHTML = '';
       
-        // Contar cantidad de cada producto
         const productCount = {};
         cart.forEach(item => {
             productCount[item.name] = (productCount[item.name] || 0) + 1;
@@ -159,13 +156,11 @@ document.addEventListener('DOMContentLoaded', () => {
             cartText += `${name} (x${quantity})\n`;
         });
 
-        cartDataInput.value = cartText.trim(); // Gua
+        cartDataInput.value = cartText.trim();
         }
        
     }
     
-
-    // Agregar producto al carrito
     function addToCart(event) {
         const button = event.target;
         const name = button.getAttribute('data-name');
@@ -176,106 +171,37 @@ document.addEventListener('DOMContentLoaded', () => {
         updateCartBookingUI();
     }
 
-    // Eliminar producto del carrito
     function removeFromCart(index) {
         cart.splice(index, 1);
         updateCartUI();
          updateCartBookingUI();
     }
 
-    // Abrir modal del carrito al hacer clic en el botón del carrito
+    // Modal carrito
     cartButton.addEventListener('click', () => {
         if (cart.length > 0) {
-            cartModal.style.display = 'flex'; // Muestra el modal si hay productos en el carrito
+            cartModal.style.display = 'flex';
         } else {
             alert('Tu carrito está vacío.');
         }
     });
 
-    // Cerrar el modal del carrito al hacer clic en el botón de cerrar
     closeCartButton.addEventListener('click', () => {
         cartModal.style.display = 'none';
     });
 
-    // Cerrar el modal si haces clic fuera del modal
     cartModal.addEventListener('click', (e) => {
         if (e.target === cartModal) {
             cartModal.style.display = 'none';
         }
     });
 
-    // Confirmar carrito y proceder con la reserva
-    // confirmCartButton.addEventListener('click', () => {
-    //     if (cart.length === 0) {
-    //         // Si el carrito está vacío, continuar con la reserva sin productos
-    //         confirmationMessage.style.display = 'block';
-    //         confirmationMessage.innerHTML = `
-    //             <h3>¡Su reserva ha sido realizada con éxito!</h3>
-    //             <p>Gracias por su reserva. No hay productos en su carrito, pero su reserva ha sido registrada correctamente.</p>
-    //         `;
-    //     } else {
-    //         // Si hay productos, confirmar carrito
-    //         cartModal.style.display = 'none'; // Cerrar el modal
-    //         confirmationMessage.style.display = 'block';
-    //         confirmationMessage.innerHTML = `
-    //             <h3>¡Su reserva ha sido realizada con éxito!</h3>
-    //             <p>Gracias por su compra. ¡Nos vemos pronto!</p>
-    //             <p>Productos reservados: ${cart.map(item => item.name).join(', ')}</p>
-    //         `;
-    //     }
-
-    //     // Limpiar carrito después de la reserva
-    //     localStorage.removeItem('cart');
-    //     cart = [];
-    //     updateCartUI(); // Refrescar la interfaz del carrito
-    //      updateCartBookingUI();
-
-    //     // Enviar el formulario de reserva
-    //     reservationForm.submit();
-    // });
-
-    // 🚀 Agregar funcionalidad a todos los botones "Añadir al Carrito"
     addToCartButtons.forEach(button => {
         button.addEventListener('click', addToCart);
     });
 
     updateCartUI();
      updateCartBookingUI();
-
-    // sendBookingButton.addEventListener('click', () => {
-    //     if (cart.length === 0) {
-    //         // Si el carrito está vacío, continuar con la reserva sin productos
-    //         confirmationMessage.style.display = 'block';
-    //         confirmationMessage.innerHTML = `
-    //             <h3>¡Su reserva ha sido realizada con éxito!</h3>
-    //             <p>Gracias por su reserva. No hay productos en su carrito, pero su reserva ha sido registrada correctamente.</p>
-    //         `;
-    //     } else {
-    //         // Si hay productos, confirmar carrito
-    //         cartModal.style.display = 'none'; // Cerrar el modal
-    //         confirmationMessage.style.display = 'block';
-    //         confirmationMessage.innerHTML = `
-    //             <h3>¡Su reserva ha sido realizada con éxito!</h3>
-    //             <p>Gracias por su compra. ¡Nos vemos pronto!</p>
-    //             <p>Productos reservados: ${cart.map(item => item.name).join(', ')}</p>
-    //         `;
-    //     }
-
-    //     // Limpiar carrito después de la reserva
-    //     localStorage.removeItem('cart');
-    //     cart = [];
-    //     updateCartUI(); // Refrescar la interfaz del carrito
-    //      updateCartBookingUI();
-
-    //     // Enviar el formulario de reserva
-    //     reservationForm.submit();
-    // });
-
-
-    // Evitar el envío del formulario si está presente en la página
-    // reservationForm.addEventListener('submit', (e) => {
-    //     e.preventDefault();  // Evitar el envío a Formspree
-    // });
 });
 
 
@@ -364,34 +290,28 @@ document.addEventListener("DOMContentLoaded", function () {
         return;
     }
 
-    // Verificar si ya hay una elección guardada
     const cookiePreferences = JSON.parse(localStorage.getItem("cookiePreferences"));
 
     if (cookiePreferences && cookiePreferences.expiration > Date.now()) {
         cookieBanner.style.display = "none";
     }
 
-    // Función para guardar la elección y establecer la fecha de expiración (1 mes)
     function setCookiePreference(type) {
-        const expirationTime = Date.now() + 30 * 24 * 60 * 60 * 1000; // 30 días en milisegundos
+        const expirationTime = Date.now() + 30 * 24 * 60 * 60 * 1000; 
         localStorage.setItem("cookiePreferences", JSON.stringify({ type, expiration: expirationTime }));
         cookieBanner.style.display = "none";
 
         if (type === "all") {
             console.log("Todas las cookies activadas.");
-            // Aquí puedes activar otras cookies opcionales, como analíticas o de terceros
         } else {
             console.log("Solo cookies necesarias activadas.");
-            // Aquí puedes bloquear cookies no esenciales si es necesario
         }
     }
 
-    // Evento para aceptar solo las necesarias
     acceptNecessaryButton.addEventListener("click", function () {
         setCookiePreference("necessary");
     });
 
-    // Evento para aceptar todas
     acceptAllButton.addEventListener("click", function () {
         setCookiePreference("all");
     });
